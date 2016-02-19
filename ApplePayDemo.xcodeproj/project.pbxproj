@@ -15,6 +15,7 @@
 		9F46D8E91C771FF20079AC31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F46D8E71C771FF20079AC31 /* LaunchScreen.storyboard */; };
 		9F46D8F41C771FF20079AC31 /* ApplePayDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F46D8F31C771FF20079AC31 /* ApplePayDemoTests.m */; };
 		9F46D8FF1C771FF20079AC31 /* ApplePayDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F46D8FE1C771FF20079AC31 /* ApplePayDemoUITests.m */; };
+		9F46D9101C77266C0079AC31 /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F46D90F1C77266C0079AC31 /* PassKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		9F46D8FA1C771FF20079AC31 /* ApplePayDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApplePayDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F46D8FE1C771FF20079AC31 /* ApplePayDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApplePayDemoUITests.m; sourceTree = "<group>"; };
 		9F46D9001C771FF20079AC31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F46D90C1C77203B0079AC31 /* ApplePayDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ApplePayDemo.entitlements; sourceTree = "<group>"; };
+		9F46D90F1C77266C0079AC31 /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F46D9101C77266C0079AC31 /* PassKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +85,7 @@
 		9F46D8CD1C771FF20079AC31 = {
 			isa = PBXGroup;
 			children = (
+				9F46D90F1C77266C0079AC31 /* PassKit.framework */,
 				9F46D8D81C771FF20079AC31 /* ApplePayDemo */,
 				9F46D8F21C771FF20079AC31 /* ApplePayDemoTests */,
 				9F46D8FD1C771FF20079AC31 /* ApplePayDemoUITests */,
@@ -101,6 +106,7 @@
 		9F46D8D81C771FF20079AC31 /* ApplePayDemo */ = {
 			isa = PBXGroup;
 			children = (
+				9F46D90C1C77203B0079AC31 /* ApplePayDemo.entitlements */,
 				9F46D8DC1C771FF20079AC31 /* AppDelegate.h */,
 				9F46D8DD1C771FF20079AC31 /* AppDelegate.m */,
 				9F46D8DF1C771FF20079AC31 /* ViewController.h */,
@@ -207,6 +213,15 @@
 				TargetAttributes = {
 					9F46D8D51C771FF20079AC31 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 8T4PNLXJ4E;
+						SystemCapabilities = {
+							com.apple.OMC = {
+								enabled = 1;
+							};
+							com.apple.Wallet = {
+								enabled = 1;
+							};
+						};
 					};
 					9F46D8EE1C771FF20079AC31 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -411,10 +426,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ApplePayDemo/ApplePayDemo.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ApplePayDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhimei360.demo.ApplePayDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -422,10 +441,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ApplePayDemo/ApplePayDemo.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ApplePayDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhimei360.demo.ApplePayDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
