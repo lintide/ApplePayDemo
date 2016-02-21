@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8FC90F551C782E830036451F /* libUPAPayPlugin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC90F541C782E830036451F /* libUPAPayPlugin.a */; };
 		9F46D8DB1C771FF20079AC31 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F46D8DA1C771FF20079AC31 /* main.m */; };
 		9F46D8DE1C771FF20079AC31 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F46D8DD1C771FF20079AC31 /* AppDelegate.m */; };
 		9F46D8E11C771FF20079AC31 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F46D8E01C771FF20079AC31 /* ViewController.m */; };
@@ -36,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8FC90F511C782E830036451F /* UPAPayPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPAPayPlugin.h; sourceTree = "<group>"; };
+		8FC90F521C782E830036451F /* UPAPayPluginDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPAPayPluginDelegate.h; sourceTree = "<group>"; };
+		8FC90F541C782E830036451F /* libUPAPayPlugin.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUPAPayPlugin.a; sourceTree = "<group>"; };
 		9F46D8D61C771FF20079AC31 /* ApplePayDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApplePayDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F46D8DA1C771FF20079AC31 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9F46D8DC1C771FF20079AC31 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -61,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FC90F551C782E830036451F /* libUPAPayPlugin.a in Frameworks */,
 				9F46D9101C77266C0079AC31 /* PassKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,6 +87,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8FC90F4E1C782E670036451F /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				8FC90F4F1C782E830036451F /* applePaySDK */,
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
+		8FC90F4F1C782E830036451F /* applePaySDK */ = {
+			isa = PBXGroup;
+			children = (
+				8FC90F501C782E830036451F /* inc */,
+				8FC90F531C782E830036451F /* libs */,
+			);
+			path = applePaySDK;
+			sourceTree = "<group>";
+		};
+		8FC90F501C782E830036451F /* inc */ = {
+			isa = PBXGroup;
+			children = (
+				8FC90F511C782E830036451F /* UPAPayPlugin.h */,
+				8FC90F521C782E830036451F /* UPAPayPluginDelegate.h */,
+			);
+			path = inc;
+			sourceTree = "<group>";
+		};
+		8FC90F531C782E830036451F /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				8FC90F541C782E830036451F /* libUPAPayPlugin.a */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
 		9F46D8CD1C771FF20079AC31 = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +145,7 @@
 		9F46D8D81C771FF20079AC31 /* ApplePayDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8FC90F4E1C782E670036451F /* Vendors */,
 				9F46D90C1C77203B0079AC31 /* ApplePayDemo.entitlements */,
 				9F46D8DC1C771FF20079AC31 /* AppDelegate.h */,
 				9F46D8DD1C771FF20079AC31 /* AppDelegate.m */,
@@ -431,6 +471,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ApplePayDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ApplePayDemo/Vendors/applePaySDK/libs",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhimei360.demo.ApplePayDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -446,6 +490,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ApplePayDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ApplePayDemo/Vendors/applePaySDK/libs",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhimei360.demo.ApplePayDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -458,6 +506,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = ApplePayDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ApplePayDemo/Vendors/applePaySDK/libs",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhimei360.demo.ApplePayDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ApplePayDemo.app/ApplePayDemo";
@@ -470,6 +522,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = ApplePayDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ApplePayDemo/Vendors/applePaySDK/libs",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhimei360.demo.ApplePayDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ApplePayDemo.app/ApplePayDemo";
@@ -519,6 +575,7 @@
 				9F46D9051C771FF20079AC31 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9F46D9061C771FF20079AC31 /* Build configuration list for PBXNativeTarget "ApplePayDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +584,7 @@
 				9F46D9081C771FF20079AC31 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9F46D9091C771FF20079AC31 /* Build configuration list for PBXNativeTarget "ApplePayDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -535,6 +593,7 @@
 				9F46D90B1C771FF20079AC31 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

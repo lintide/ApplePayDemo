@@ -37,11 +37,20 @@
     PKPaymentSummaryItem *total = [PKPaymentSummaryItem summaryItemWithLabel:@"Total" amount:[NSDecimalNumber decimalNumberWithString:@"1.99"]];
     
     payment.paymentSummaryItems = @[total];
-    payment.merchantIdentifier = @"";
+    
+    // 人民币
     payment.currencyCode = @"CNY";
+    
+    // 中国
     payment.countryCode = @"CN";
+    
+    // 在 developer.apple.com 里设置的 merchantID
     payment.merchantIdentifier = @"merchant.com.zhimei360.applepaydemo";
+    
+    // 支持哪种卡类型，这里表示信用卡
     payment.merchantCapabilities = PKMerchantCapabilityCredit;
+    
+    // 支持哪种结算网关
     payment.supportedNetworks = @[PKPaymentNetworkChinaUnionPay];
     
     NSLog(@"payment: %@", payment);
