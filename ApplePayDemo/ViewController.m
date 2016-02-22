@@ -44,7 +44,7 @@
     // 中国
     payment.countryCode = @"CN";
     
-    // 在 developer.apple.com 里设置的 merchantID
+    // 在 developer.apple.com member center 里设置的 merchantID
     payment.merchantIdentifier = @"merchant.com.zhimei360.applepaydemo";
     
     // 支持哪种卡类型，这里表示信用卡
@@ -64,13 +64,36 @@
 
 #pragma mark - Payment delegate
 
+//- (void)paymentAuthorizationViewController:(PKPaymentAuthorizationViewController *)controller didSelectPaymentMethod:(PKPaymentMethod *)paymentMethod completion:(void (^)(NSArray<PKPaymentSummaryItem *> * _Nonnull))completion {
+//    NSLog(@"didSelectPaymentMethod");
+//    completion(@[]);
+//}
+
+-(void)paymentAuthorizationViewController:(PKPaymentAuthorizationViewController *)controller didSelectShippingContact:(PKContact *)contact completion:(void (^)(PKPaymentAuthorizationStatus, NSArray<PKShippingMethod *> * _Nonnull, NSArray<PKPaymentSummaryItem *> * _Nonnull))completion {
+    NSLog(@"didSelectShippingContact");
+}
+
+- (void)paymentAuthorizationViewController:(PKPaymentAuthorizationViewController *)controller didSelectShippingMethod:(PKShippingMethod *)shippingMethod completion:(void (^)(PKPaymentAuthorizationStatus, NSArray<PKPaymentSummaryItem *> * _Nonnull))completion {
+    NSLog(@"didSelectShippingMethod");
+}
+
+- (void)paymentAuthorizationViewControllerWillAuthorizePayment:(PKPaymentAuthorizationViewController *)controller {
+    NSLog(@"paymentAuthorizationViewControllerWillAuthorizePayment");
+    
+    
+}
+
 - (void)paymentAuthorizationViewController:(PKPaymentAuthorizationViewController *)controller didAuthorizePayment:(PKPayment *)payment completion:(void (^)(PKPaymentAuthorizationStatus))completion {
-    NSLog(@"did authorize payment");
+    NSLog(@"did authorize payment token: %@, %@", payment.token, payment.token.transactionIdentifier);
+    
+    
+    
+    completion(PKPaymentAuthorizationStatusSuccess);
 }
 
 - (void)paymentAuthorizationViewControllerDidFinish:(PKPaymentAuthorizationViewController *)controller {
     NSLog(@"finish");
-    [self dismissViewControllerAnimated:controller completion:NULL];
+    [controller dismissViewControllerAnimated:controller completion:NULL];
 }
 
 @end
