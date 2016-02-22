@@ -29,4 +29,11 @@
 3. 在 `Apple Pay` 中点击 `Edit`，然后选择你刚才生成的 `Merchant ID` </br>
 ![configure merchant id](imgs/app_id_configure_merchant_id.png)
 
+### 生成 `Provisioning Profile` 并配置 Xcode 项目
+
+1. 在开发者后台选择 [Provisioning Profiles 标签](https://developer.apple.com/account/ios/profile/profileList.action) ，根据刚才的 `App ID` 生成 `Profile`，完成后下载文件，双击文件完成导入
+
+2. 创建 Xcode 项目，设置相应的 `Bundle ID`。完成后在项目的 `TARGETS` 项中选择 `Capabilities` 标签，打开 `Apple Pay` 选项并配置相应的 `Merchant ID` </br>
+![Xcode project settings](imgs/xcode_project_settings.png)
+
 ## 开发
