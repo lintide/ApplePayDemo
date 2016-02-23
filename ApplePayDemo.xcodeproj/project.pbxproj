@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8FC90F551C782E830036451F /* libUPAPayPlugin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FC90F541C782E830036451F /* libUPAPayPlugin.a */; };
 		9F46D8DB1C771FF20079AC31 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F46D8DA1C771FF20079AC31 /* main.m */; };
 		9F46D8DE1C771FF20079AC31 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F46D8DD1C771FF20079AC31 /* AppDelegate.m */; };
 		9F46D8E11C771FF20079AC31 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F46D8E01C771FF20079AC31 /* ViewController.m */; };
@@ -65,7 +64,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FC90F551C782E830036451F /* libUPAPayPlugin.a in Frameworks */,
 				9F46D9101C77266C0079AC31 /* PassKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
