@@ -54,8 +54,8 @@
     // 在 developer.apple.com member center 里设置的 merchantID
     payment.merchantIdentifier = @"merchant.com.zhimei360.applepaydemo";
     
-    // 支持哪种卡类型，这里表示信用卡
-    payment.merchantCapabilities = PKMerchantCapabilityCredit;
+    // Fixbug: 原来设置为 `PKMerchantCapabilityCredit` 在真机上无法回调 `didAuthorizePayment` 方法
+    payment.merchantCapabilities = PKMerchantCapability3DS | PKMerchantCapabilityEMV | PKMerchantCapabilityCredit | PKMerchantCapabilityDebit;
     
     // 支持哪种结算网关
     payment.supportedNetworks = @[PKPaymentNetworkChinaUnionPay];
